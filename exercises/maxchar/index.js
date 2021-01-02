@@ -15,7 +15,10 @@ function maxChar(str) {
         }
     }
 
-    console.log(map)
+    let entries = Object.entries(map)
+    entries.sort((a, b) => a[1] < b[1])
+
+    return entries[0][0]
 }
 
 maxChar("apple 1231111")

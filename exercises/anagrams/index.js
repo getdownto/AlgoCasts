@@ -8,6 +8,13 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+    let strASorted = [...stringA.toLowerCase()].sort((a, b) => a.localeCompare(b)).filter((a) => a.charCodeAt() >= 97 && a.charCodeAt() <= 122)
+    let strBSorted = [...stringB.toLowerCase()].sort((a, b) => a.localeCompare(b)).filter((a) => a.charCodeAt() >= 97 && a.charCodeAt() <= 122)
+    
+    return strASorted.join('') === strBSorted.join('')
+}
+
+anagrams('rail sAfety', 'fairy tales')
 
 module.exports = anagrams;
